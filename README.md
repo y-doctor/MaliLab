@@ -33,7 +33,7 @@ git clone https://github.com/sdsc/galyleo.git
 
 Activate galyleo
 ```
-cd galyleo && ./galyleo configure --reverse-proxy tscc-user-content.sdsc.edu --partition hotel --scratch-dir '"/scratch/${USER}/job_${SLURM_JOB_ID}"`
+cd galyleo && ./galyleo configure --reverse-proxy tscc-user-content.sdsc.edu --partition hotel --scratch-dir '"/scratch/${USER}/job_${SLURM_JOB_ID}"'
 ```
 Run the .bashrc file
 ```
