@@ -27,11 +27,13 @@ mkdir /tscc/projects/ps-malilab/$USER && cd $_
 Copy the MaliLab github repository into your personal space
 ```
 git clone https://github.com/y-doctor/MaliLab.git
+cd MaliLab
+git clone https://github.com/sdsc/galyleo.git
 ```
 
 Activate galyleo
 ```
-cd MaliLab/galyleo && ./galyleo configure --reverse-proxy tscc-user-content.sdsc.edu --partition hotel --scratch-dir '"/scratch/${USER}/job_${SLURM_JOB_ID}"'
+cd galyleo && ./galyleo configure --reverse-proxy tscc-user-content.sdsc.edu --partition hotel --scratch-dir '"/scratch/${USER}/job_${SLURM_JOB_ID}"`
 ```
 Run the .bashrc file
 ```
