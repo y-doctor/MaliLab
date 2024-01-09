@@ -6,7 +6,7 @@ Open a VS Code terminal. ssh into tscc (change **ydoctor** to your personal logi
 ```
 ssh ydoctor@login.tscc.sdsc.edu
 ```
-Note: sometimes it will appear as if nothing is happening. I reccomend clicking the `details` in the bottom left of VS code. It will likely show that it is waiting for an input for 2FA such as Duo Push. Type in 1 for Duo push. 
+Open the .bashrc file
 
 ```
 nano .bashrc
@@ -42,3 +42,14 @@ Make a folder to hold the software container:
 mkdir /tscc/projects/ps-malilab/$USER/containers && cd $_
 singularity build data_science_box.sif docker://jupyter/scipy-notebook:latest
 ```
+
+### Running a Jupyter Notebook
+- Make sure you have the `ssh` and `jupyter notebook` and `python` extensions downloaded in vscode
+- From your VS code Welcome page, click `connect to` and select `host`
+  - The first time you do this, it will ask you to add a host. That host is `ssh ydoctor@login.tscc.sdsc.edu` (change **ydoctor** to your login name). It will ask you to add this to the list of hosts; say yes. Restart your VS code after doing this the first time and do it again, this time selecting the `login.tscc.sdsc.edu` as a host.
+    - Note: sometimes VS code will aappear to stall and do nothing when trying to connect. I would click `details` in the bottom right -- it's usually just waiting for a Duo Push
+  
+Open a new terminal in VS code. (At the top, Terminal --> New Terminal) Then, in the terminal, type `compute`
+- This will request 24 CPU Cores, 128 GB of RAM for 8 hours. You can modify the alias `compute` in the `.bashrc` to ask for more power, but for most tasks this should be enough.
+- Copy and paste the url output into internet browser. Once the server is up and running, in VS code, open a jupyter notebook, click select kernel --> existing jupyter kernel --> paste the url there --> select python3 as the kernel. 
+
